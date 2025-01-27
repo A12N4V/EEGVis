@@ -1,8 +1,10 @@
 # EEG Visualizer
 
-![EEG Graph](s3.png)
-![Heatmap](s1.png)
-![3D Brain Map](s2.png)
+<div align="center">
+  <img src="s3.png" alt="EEG Graph" width="30%" style="display:inline-block;" />
+  <img src="s1.png" alt="Heatmap" width="30%" style="display:inline-block;" />
+  <img src="s2.png" alt="3D Brain Map" width="30%" style="display:inline-block;" />
+</div>
 
 An EEG Visualizer web application designed to process, display, and analyze EEG data. This tool provides an intuitive interface to plot EEG signals, visualize heatmaps, and explore a 3D brain map. The frontend is built with React, and the backend is powered by Flask. 
 
@@ -31,8 +33,8 @@ Follow the steps below to set up and run the EEG Visualizer on your local machin
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/A12N4V/rps.git
-    cd rps/backend
+    git clone https://github.com/A12N4V/EEGVis.git
+    cd EEGVis/backend
     ```
 
 2. Create a virtual environment:
@@ -113,19 +115,6 @@ The React app will run on `http://localhost:3000` by default.
 
 ---
 
-## Example Screenshots
-
-### EEG Graph Plotting
-![EEG Graph](frontend/public/s3.png)
-
-### Heatmap Display
-![Heatmap](frontend/public/s1.png)
-
-### 3D Brain Map
-![3D Brain Map](frontend/public/s2.png)
-
----
-
 ## Example Initialization Code
 
 ### Backend (Flask)
@@ -186,4 +175,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, feel free to reach out via GitHub Issues or contact the maintainer through the repository: [A12N4V/rps](https://github.com/A12N4V/rps).
+For questions or feedback, feel free to reach out via GitHub Issues or contact the maintainer through the repository: [A12N4V/EEGVis](https://github.com/A12N4V/EEGVis).
+
