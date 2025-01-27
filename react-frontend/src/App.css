@@ -1,0 +1,196 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.dark {
+  background-color: #000000; /* Absolute black for dark mode */
+  color: #ffffff;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: inherit;
+  border-bottom: 1px solid #ccc;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button:hover {
+  transform: rotate(20deg);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+}
+
+.left-pane, .right-pane {
+  height: 100%;
+  display: flex;
+}
+
+.left-pane {
+  width: 70%;
+  border-right: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-pane {
+  width: 30%;
+  flex-direction: column; /* Split into two vertical parts */
+}
+
+.plot-container {
+  width: 95%; /* Resize plot to fit better */
+  height: auto; /* Ensure plot fits well */
+}
+
+.map-item {
+  flex: 1; /* Each map takes full height of the right pane */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-image {
+  max-width: 85%; /* Reduce size to avoid overflow */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Font Awesome icon transition */
+.toggle-button svg {
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.dark .toggle-button svg {
+  color: yellow; /* Sun color in dark mode */
+}
+
+.light .toggle-button svg {
+  color: #000; /* Moon color in light mode */
+}
+
+/* Control Buttons */
+.controls {
+  display: flex;
+  justify-content: center;
+  padding:16px;
+}
+
+.control-button {
+    background-color:#007bff; /* Primary color */
+    color:white; 
+    border:none; 
+    border-radius:.25rem; 
+    padding:.5rem; 
+    cursor:pointer; 
+    font-size:.875rem; 
+    transition:.3s; 
+}
+.control-button:hover {
+    background-color:#0056b3; /* Darker shade on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width:768px) {
+    .content {
+        flex-direction: column; /* Stack the panes vertically */
+        height:auto; /* Adjust height for smaller screens */
+    }
+
+    .right-pane {
+        order:1; /* Move right-pane to the top */
+        width:100%; /* Full width */
+        height:auto; /* Allow height to adjust based on content */
+        flex-direction:column; /* Stack each content item vertically */
+        overflow-y:auto; /* Allow vertical scrolling if content overflows */
+    }
+
+    .left-pane {
+        order:2; /* Move left-pane to the bottom */
+        width:100%; /* Full width */
+        height:auto; /* Allow height to adjust based on content */
+        border-top:.0625rem solid #ccc; /* Add lateral division between panes */
+        justify-content:center;
+        align-items:center;
+    }
+
+    .map-item {
+        width:100%; /* Each item takes full width of the pane */
+        height:auto; /* Adjust based on content size */
+        flex:none; 
+        position:absolute; 
+        display:flex; 
+        flex-direction:column; 
+    }
+
+    .map-image {
+        flex-grow:.8; /* Adjust to take up remaining space after window bar */
+        max-width:100%; 
+        height:auto; 
+    }
+
+    .window-bar {
+        height:.1875rem; /* Fixed height for the bar (30px)*/
+        background-color:#e0e0e0; 
+        color:#333; 
+        padding:.3125rem .625rem; 
+        display:flex; 
+        justify-content:flex-start; 
+        align-items:center; 
+        cursor:pointer; 
+    }
+
+    .window-bar-buttons {  
+      display:flex;  
+      gap:.3125rem;  
+    }
+
+    .window-bar-button {  
+      width:.9375rem;  
+      height:.9375rem;  
+      border-radius:.9375rem;  
+      background-color:#ff5f57;  
+      cursor:pointer;  
+    }
+
+    .window-bar-button:hover {  
+      background-color:#ff1e1e;  
+    }
+
+    .window-bar-button.maximize {  
+      background-color:#28c940;  
+    }
+
+    .window-bar-button.minimize {  
+      background-color:#f4bf4f;  
+    }
+}
